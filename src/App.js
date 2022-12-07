@@ -7,32 +7,10 @@ import { useEffect, useState } from "react"
 
 function App() {
   const [position, setPosition] = useState(0)
-  // tailwind
 
-  console.log(position)
-    useEffect(() => {
-    setPosition(+localStorage.getItem("position"))
-
-  
-  }, [])
- 
-
-  useEffect(() => {
-    
-
-  }, [position])
-
-
-  
-  
-  
-  console.log(localStorage)
 
   const handleInc = async() => {
-  
     await position < 80 ? setPosition(position + 10) : setPosition(0)
-    localStorage.setItem('position', position);
-    
   }
 
   const handleDec =() => position<0? setPosition(position - 10): setPosition(0)
@@ -54,14 +32,14 @@ function App() {
       </div>
       <div className="flex gap-24">
         <button
-          className="border w-52 rounded bg-red-600 text-white    text-6xl "
+          className="border w-52 rounded bg-red-600 text-white    text-3xl "
           onClick={handleDec}
         >
           {" "}
-          <div>&#8592;</div> <div>NAUTY</div>
+          <div>&#8592;</div> <div>NAUGHTY</div>
         </button>
         <button
-          className="border w-52 rounded bg-red-600 text-white    text-6xl "
+          className="border w-52 rounded bg-red-600 text-white    text-3xl "
           onClick={handleInc}
         >
           {" "}
