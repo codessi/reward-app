@@ -19,7 +19,7 @@ function App() {
       <div>
         <h1 className="text-4xl text-red-700 mb-12 text-center font-bold ">
           {" "}
-          For My Christmas Gift  {position}%
+          For My Christmas Gift
         </h1>
         <div className="relative w-screen border h-52 ">
           <img src={gift} className="absolute right-0" alt="" />
