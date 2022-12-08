@@ -8,31 +8,38 @@ import { useEffect, useState } from "react"
 function App() {
   const [position, setPosition] = useState(0)
 
+  useEffect(() => {
+    setPosition(+localStorage.getItem("position"))
+  }, [])
+
   const handleInc = async () => {
     position < 80 ? setPosition(position + 10) : setPosition(0)
+    localStorage.setItem("position", position)
   }
 
-  const handleDec = () =>
+  const handleDec = () => {
     position > 0 ? setPosition(position - 10) : setPosition(0)
+    localStorage.setItem("position", position)
+  }
   return (
     <div className="App h-screen flex flex-col justify-center items-center">
       <div>
         <h1 className="text-4xl text-red-700 mb-12 text-center font-bold ">
           {" "}
-          For My Christmas Gift 
+          For My Christmas Gift
         </h1>
         <div className="relative w-screen border h-52 ">
           <img src={gift} className="absolute right-0" alt="" />
           <img
             className={`absolute  self-center`}
             src={girl}
-            style={{left:`${position}%`}}
+            style={{ left: `${position}%` }}
             alt=""
           />
           {position === 80 && (
             <img
               src={confetti}
-              className="absolute left-[70%] top-[-40%]" 
+              className="absolute left-[70%] top-[-40%]"
               alt=""
             />
           )}
