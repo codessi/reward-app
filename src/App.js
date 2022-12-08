@@ -9,17 +9,17 @@ function App() {
   const [position, setPosition] = useState(0)
 
   const handleInc = async () => {
-    ;(await position) < 80 ? setPosition(position + 10) : setPosition(0)
+    position < 80 ? setPosition(position + 10) : setPosition(0)
   }
 
   const handleDec = () =>
-    position < 0 ? setPosition(position - 10) : setPosition(0)
+    position > 0 ? setPosition(position - 10) : setPosition(0)
   return (
     <div className="App h-screen flex flex-col justify-center items-center">
       <div>
         <h1 className="text-4xl text-red-700 mb-12 text-center font-bold ">
           {" "}
-          For My Christmas Gift  {position}%
+          For My Christmas Gift 
         </h1>
         <div className="relative w-screen border h-52 ">
           <img src={gift} className="absolute right-0" alt="" />
