@@ -24,14 +24,15 @@ function App() {
         <div className="relative w-screen border h-52 ">
           <img src={gift} className="absolute right-0" alt="" />
           <img
-            className={`absolute left-[${position}%] self-center`}
+            className={`absolute  self-center`}
             src={girl}
+            style={{left:`${position}%`}}
             alt=""
           />
           {position === 80 && (
             <img
               src={confetti}
-              className="absolute left-[70%] top-[-40%]"
+              className="absolute left-[70%] top-[-40%]" 
               alt=""
             />
           )}
